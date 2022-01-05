@@ -28,7 +28,18 @@ This library provides simple access to the Fleetio's API.
 ```
 pip install pyfleetio
 ```
+## Usage
+```
+import os
+from fleetio import Fleetio
 
+api_key = os.environ.get('FLEETIO_API_KEY')
+account_token = os.environ.get('FLEETIO_ACCOUNT_TOKEN')
+
+f = Fleetio(api_key, account_token)
+active_contacts = f.contacts.get()
+all_contacts = f.contacts.get(queryParams={"include_archived":"1"})
+```
 
 ### Throttling
 Rate limiting is enforced by the API with a threshold of 20 requests per minute. Learn more about it [here](https://developer.fleetio.com/docs/response-codes).

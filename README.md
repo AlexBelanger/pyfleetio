@@ -17,7 +17,6 @@ If you have any questions, please reach out or by submitting an issue [here](htt
             - [Examples of `create()`]
         * [PATCH Requests](#put-requests)
             - [Examples of `update()`]
-            - [Examples of `insertTask()`]
         * [DELETE Requests](#delete-requests)
             - [Examples of `deleteOne()`]
 

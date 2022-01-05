@@ -1,12 +1,10 @@
 # Fleetio Python API Wrapper
-Learn more about Fleetio's API [here](https://developer.fleetio.com/). <br>
-If you have any questions, please reach out or by submitting an issue [here](https://github.com/AlexBelanger/pyfleetio/issues).
 
-## Table of contents
-* [Table of contents](#table-of-contents)
-* [Introduction](#introduction)
-* [Installation](#installation)
-* [Usage](#usage)
+## Table of Contents
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Features](#features)
+    - [Usage](#usage)
     - [Throttling](#throttling)
     - [Responses](#responses)
     - [Supported CRUD operations](#supported-crud-operations)
@@ -19,15 +17,26 @@ If you have any questions, please reach out or by submitting an issue [here](htt
             - [Examples of `update()`]
         * [DELETE Requests](#delete-requests)
             - [Examples of `deleteOne()`]
+- [Feedback](#feedback)
+- [Contributors](#contributors)
+- [Acknowledgments](#acknowledgments)
 
 ## Introduction
-This library provides simple access to the Fleetio's API.
+**_pyfleetio_** allows you to send HTTP requests extremely easily to the Fleetio APi. This library is mostly based on the Requests library.
+Learn more about Fleetio's API [here](https://developer.fleetio.com/). <br>
+
 
 ## Installation
 ```
 pip install pyfleetio
 ```
-## Usage
+## Features
+- An API key needs to be generated using the following procedure [here](https://developer.fleetio.com/).
+- Find your account specific [Token](https://developer.fleetio.com/).
+- Provide those parameters to Fleetio class.
+
+### Usage
+
 ```
 import os
 from fleetio import Fleetio
@@ -45,7 +54,11 @@ Rate limiting is enforced by the API with a threshold of 20 requests per minute.
 
 ### Responses
 
-## Special Mention
+## Feedback
+If you have any questions, please reach out or by submitting an issue [here](https://github.com/AlexBelanger/pyfleetio/issues).
+Feature requests are always welcome. If you wish to contribute, please take a quick look at the [guidelines](./CONTRIBUTING.md)!
+
+## Acknowledgments
 This library was developed with the fundamentals adapted from this API Wrapper [pyonfleet](https://github.com/onfleet/pyonfleet)
 
-###This project is not affiliated with Fleetio.
+### **Note** This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Fleetio Inc.

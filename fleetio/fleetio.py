@@ -116,6 +116,8 @@ class Fleetio(object):
     # TODO: work orders line items need vehicle id and line item ID, TBD
     work_order_statuses = Endpoint(_session, '/work_order_statuses', ('GET'), ('GET'))
 
+    # TODO test Bulk update API: https://developer.fleetio.com/docs/bulk-api
+    bulk_api = Endpoint(_session,'/bulk_api_jobs',('POST'),('GET'))
     
     def __init__(self, api_key:str, account_token:str) -> None:
         """

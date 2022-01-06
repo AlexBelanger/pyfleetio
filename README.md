@@ -7,13 +7,13 @@
     - [Usage](#usage)
         * [GET Requests](#get-requests)
             - [Examples of `get()`]
-            - [Examples of `get(param)`]
+            - [Examples of `get(id,queryParams)`]
         * [POST Requests](#post-requests)
-            - [Examples of `create()`]
+            - [Examples of `create(body)`]
         * [PATCH Requests](#put-requests)
-            - [Examples of `update()`]
+            - [Examples of `update(id, body)`]
         * [DELETE Requests](#delete-requests)
-            - [Examples of `deleteOne()`]
+            - [Examples of `deleteOne(id)`]
     - [Throttling](#throttling)
     - [Responses](#responses)
 - [Feedback](#feedback)

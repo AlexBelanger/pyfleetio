@@ -33,9 +33,9 @@ class Request:
         self.http_method = http_method
         self.path = path
         self.session = session
-
+    
+    @sleep_and_retry   
     @on_exception(expo, RateLimitError, max_tries=BACKOFF_RETRIES) # exponential backoff
-    @sleep_and_retry
     @limits(calls=RATE_LIMIT, period=ONE_MINUTE) 
     def __call__(self, id=None, body=None, queryParams=None):
         """
@@ -172,8 +172,8 @@ class RequestPurchaseOrderID(Request):
     Call function signature updated to match.
     """
     
-    @on_exception(expo, RateLimitError, max_tries=BACKOFF_RETRIES)
     @sleep_and_retry
+    @on_exception(expo, RateLimitError, max_tries=BACKOFF_RETRIES)
     @limits(calls=RATE_LIMIT, period=ONE_MINUTE) 
     def __call__(self, number=None, body=None, queryParams=None): 
         """
@@ -212,8 +212,8 @@ class RequestEquipmentID(Request):
     Call function signature updated to match.
     """
 
-    @on_exception(expo, RateLimitError, max_tries=BACKOFF_RETRIES)
     @sleep_and_retry
+    @on_exception(expo, RateLimitError, max_tries=BACKOFF_RETRIES)
     @limits(calls=RATE_LIMIT, period=ONE_MINUTE) 
     def __call__(self, equipment_id=None, body=None, queryParams=None): 
         obj_id = equipment_id
@@ -240,9 +240,9 @@ class RequestVehicleID(Request):
     Some API requires :vehicle_id instead of :id
     Call function signature updated to match.
     """
-
+    
+    @sleep_and_retry    
     @on_exception(expo, RateLimitError, max_tries=BACKOFF_RETRIES)
-    @sleep_and_retry
     @limits(calls=RATE_LIMIT, period=ONE_MINUTE) 
     def __call__(self, vehicle_id=None, body=None, queryParams=None): 
         obj_id = vehicle_id

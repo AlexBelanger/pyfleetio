@@ -17,32 +17,14 @@ def test_apikey_token():
     assert account_token != ''
     assert account_token != None
 
-def test_fleetio_auth1():
+def test_fleetio_auth():
     assert f.ok == True
-
-def test_fleetio_auth2():
-    api_key = ''
-    token = ''
-    
-    t = Fleetio(api_key,token)
-    assert t.ok == False
-    
-def test_fleetio_validate_api_key():
-    f = Fleetio
-    
-    api_key = '123'    
-    check = f._validate_api_key(api_key)
-    assert api_key != check
-    
-    api_key = 'Token123'    
-    check = f._validate_api_key(api_key)
-    assert api_key != check
-    
-    api_key = 'Token 123'    
-    check = f._validate_api_key(api_key)
-    assert api_key == check
     
 def test_fleetio_vehicles_get():
+    api_key = os.environ.get('FLEETIO_API_KEY')
+    account_token = os.environ.get('FLEETIO_ACCOUNT_TOKEN')
+    
+    f = Fleetio(api_key, account_token)
     vehicles = f.vehicles.get()
     assert isinstance(vehicles,list)
     
@@ -59,7 +41,7 @@ def test_fleetio_vehicles_create_delete():
     'ownership'            : 'owned',
     'system_of_measurement': 'imperial',
     'vehicle_type_id'      : '804609',
-    'vehicle_status_id'    : '276263',     }
+    'vehicle_status_id'    : '276263',}
         
     old_vehicles = f.vehicles.get()
     time.sleep(1)
@@ -170,3 +152,26 @@ def test_fleetio_get_endpoints_part2():
     assert isinstance(q,list)
     q = f.work_order_statuses.get()
     assert isinstance(q,list)
+
+    """Tests for Invalid API keys
+       These tests need to be after valid API keys since session is shared between instances
+    """
+
+def test_fleetio_auth2():
+    t = Fleetio('','')
+    assert t.ok == False
+    
+def test_fleetio_validate_api_key():
+    t = Fleetio
+    
+    api_key = '123'    
+    check = t._validate_api_key(api_key)
+    assert api_key != check
+    
+    api_key = 'Token123'    
+    check = t._validate_api_key(api_key)
+    assert api_key != check
+    
+    api_key = 'Token 123'    
+    check = t._validate_api_key(api_key)
+    assert api_key == check

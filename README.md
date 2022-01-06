@@ -148,4 +148,4 @@ Feature requests are always welcome. If you wish to contribute, please take a qu
 ## Acknowledgments
 This library was developed with the fundamentals adapted from this API Wrapper [pyonfleet](https://github.com/onfleet/pyonfleet)
 
-#### **Note** This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Fleetio.com
+#### **Disclaimer:** This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Fleetio.com

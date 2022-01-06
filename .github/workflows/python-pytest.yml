@@ -16,6 +16,10 @@ jobs:
     environment: 
       name: pytest
     steps:
+    - name: Get secrets from environment
+      env:
+        FLEETIO_API_KEY : ${{ secrets.FLEETIO_API_KEY }}
+        FLEETIO_ACCOUNT_TOKEN : ${{ secrets.FLEETIO_ACCOUNT_TOKEN }}
     - uses: actions/checkout@v2
     - name: Set up Python 3.10
       uses: actions/setup-python@v2

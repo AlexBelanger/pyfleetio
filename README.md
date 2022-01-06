@@ -7,7 +7,7 @@
     - [Usage](#usage)
         * [GET Requests](#get-requests)
             - [Examples of `get()`]
-            - [Examples of `get(id,queryParams)`]
+            - [Examples of `get(id, queryParams)`]
         * [POST Requests](#post-requests)
             - [Examples of `create(body)`]
         * [PATCH Requests](#put-requests)

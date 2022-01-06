@@ -112,7 +112,7 @@ api_key = os.environ.get('FLEETIO_API_KEY')
 account_token = os.environ.get('FLEETIO_ACCOUNT_TOKEN')
 
 car_id = '123456'
-f.vehicles.update(id=car_id, body = {'color':'Yellow', 'model':'Porsche')
+f.vehicles.update(id=car_id, body = {'color':'Yellow', 'model':'Porsche'})
 ```
 
 #### DELETE Requests
@@ -148,4 +148,4 @@ Feature requests are always welcome. If you wish to contribute, please take a qu
 ## Acknowledgments
 This library was developed with the fundamentals adapted from this API Wrapper [pyonfleet](https://github.com/onfleet/pyonfleet)
 
-### **Note** This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Fleetio.com
+#### **Note** This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Fleetio.com

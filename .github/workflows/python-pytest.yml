@@ -16,10 +16,6 @@ jobs:
     environment: 
       name: pytest
     steps:
-    - name: Get secrets from environment
-      env:
-        FLEETIO_API_KEY : ${{ secrets.FLEETIO_API_KEY }}
-        FLEETIO_ACCOUNT_TOKEN : ${{ secrets.FLEETIO_ACCOUNT_TOKEN }}
     - uses: actions/checkout@v2
     - name: Set up Python 3.10
       uses: actions/setup-python@v2
@@ -37,5 +33,8 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
+      env:
+        FLEETIO_API_KEY : ${{ secrets.FLEETIO_API_KEY }}
+        FLEETIO_ACCOUNT_TOKEN : ${{ secrets.FLEETIO_ACCOUNT_TOKEN }}
       run: |
         pytest
